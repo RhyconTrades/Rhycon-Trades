@@ -48,8 +48,13 @@ function Footer() {
             <ul className="footer--link__block">
               <h5>Navigation</h5>
               <li className="footer__link">
-                <Link className="link" to="">
+                <Link className="link" to="/">
                   Home
+                </Link>
+              </li>
+              <li className="footer__link">
+                <Link className="link" to="/products">
+                  indicators
                 </Link>
               </li>
               <li className="footer__link">
@@ -57,21 +62,16 @@ function Footer() {
                   Courses
                 </Link>
               </li>
-              <li className="footer__link">
-                <Link className="link" to="">
-                  Products
-                </Link>
-              </li>
             </ul>
             <ul className="footer--link__block">
               <h5>Company</h5>
               <li className="footer__link">
-                <Link className="link" to="">
+                <Link className="link" to="/terms">
                   Terms of services
                 </Link>
               </li>
               <li className="footer__link">
-                <Link className="link" to="">
+                <Link className="link" to="/about">
                   About us
                 </Link>
               </li>
@@ -88,7 +88,7 @@ function Footer() {
         <div className="copyright">
           <p className="copyright__text">Copyright © 2023 </p>
           <button className="copyright__btn">
-            <a className="copyright__btn--text" href="">
+            <a className="copyright__btn--text" href="https://discord.gg/XHpZ7xutQN">
               made by webzone
             </a>
           </button>

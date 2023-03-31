@@ -40,13 +40,13 @@ function openMenu(){
 {
   menu && (
     <ul className="menu">
-    <li className="nav--link">
+    <li onClick={openMenu} className="nav--link">
       <Link to="/">Home</Link>
     </li>
-    <li className="nav--link">
+    <li  onClick={openMenu} className="nav--link">
       <Link to="/products">Products </Link>
     </li>
-    <li className="nav--link">
+    <li onClick={openMenu} className="nav--link">
       <Link to="/cart">
         Cart
       </Link>
