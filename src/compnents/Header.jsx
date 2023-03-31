@@ -5,7 +5,6 @@ function Header() {
     <header>
       <div className="container">
         <div className="header--content">
-          <div className="absulute-container">
             <h1>
               Mastering the Art of <span className="purple">Investing:</span>
               <br /> <span className="purple">Professional</span> Tools for{" "}
@@ -23,7 +22,6 @@ function Header() {
             </figure>
           </div>
         </div>
-      </div>
     </header>
   );
 }
