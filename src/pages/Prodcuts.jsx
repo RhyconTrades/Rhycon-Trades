@@ -1,7 +1,7 @@
 import React from "react";
-import Product from '../ui/Product'
+import Product from "../ui/Product";
 
-function Prodcuts() {
+function Prodcuts({ products }) {
   return (
     <>
       <main>
@@ -28,12 +28,9 @@ function Prodcuts() {
             </div>
           </div>
           <div className="products">
-            <Product />
-            <Product />
-            <Product />
-            <Product />
-            <Product />
-
+            {products != null &&
+              products.map((product) => <Product product={product} key={product.id} />)
+            }
           </div>
         </div>
       </main>

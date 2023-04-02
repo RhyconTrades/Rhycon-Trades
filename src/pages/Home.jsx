@@ -6,16 +6,17 @@ import Header from '../compnents/Header'
 import Testimonials from '../compnents/Testimonials'
 import Trusted from '../compnents/Trusted'
 
-function Home() {
+
+function Home({testimonials , faqs}) {
   return (
     <>
         <Header />
         <main>
             <Trusted />
-            <Testimonials />
+            <Testimonials testimonials={testimonials} />
             <Features />
             <Buy />
-            <Faq />
+            <Faq faqs={faqs} />
         </main>
     </>
   )
