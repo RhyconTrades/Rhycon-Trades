@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function Product({ product }) {
+  
   return (
     <div className="product">
       <div>
@@ -23,9 +24,11 @@ function Product({ product }) {
 
       <div className="product--btns">
         <button className="product__btn">add to cart</button>
-        <button className="lowlighted-btn product__btn">
-          <Link to={`/products/${product.nameInUrl}`}>read more</Link>
-        </button>
+          <Link className="product__btn" to={`/products/${product.nameInUrl}`}>
+            <button className="lowlighted-btn product__btn">
+              read more
+            </button>
+          </Link>
       </div>
     </div>
   );

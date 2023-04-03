@@ -39,6 +39,10 @@ function App() {
     getProducts()
   },[])
 
+  function getProduct(product){
+    
+  }
+
   return (
     <Router>
       <Nav />
