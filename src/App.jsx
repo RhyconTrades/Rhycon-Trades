@@ -7,12 +7,15 @@ import { db } from './firebase/init';
 import { collection , getDocs } from 'firebase/firestore'
 import { useState , useEffect } from 'react';
 import AboutProduct from './pages/AboutProduct';
+import Cart from './pages/Cart';
+import Terms from './pages/Terms';
 
 function App() {
 
   const [testimonials , setTestimonials] = useState(null)
   const [faq , setFaq] = useState(null)
   const [products , setProducts] = useState(null)
+  const [cart , setCart] = useState(null)
 
   useEffect(() => {
 
@@ -43,6 +46,8 @@ function App() {
         <Route exact path='/' element={<Home testimonials={testimonials} faqs={faq} />} />
         <Route exact path='/products' element={<Products products={products} />} />
         <Route exact path='products/:nameInUrl' element={<AboutProduct products={products} />}/>
+        <Route exact path='/cart' element={<Cart cart={cart} />} />
+        <Route exact path='/terms' element={<Terms />} />
       </Routes>
       <Footer />
     </Router>

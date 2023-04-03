@@ -14,6 +14,7 @@ function AboutProduct({products}) {
         }
     }, [products])
 
+
     useEffect(() =>{
         if(product){
             const arr = []

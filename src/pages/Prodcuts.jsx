@@ -1,7 +1,38 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Product from "../ui/Product";
 
 function Prodcuts({ products }) {
+
+  const [items , setItems] = useState(null)
+  const [render , setRender] = useState(false)
+
+  useEffect(() => {
+    setItems(products)
+  }, [products])
+
+  function sortProducts(value){
+    if(value == 'low-to-high'){
+      products.sort((a , b) => (a.salePrice || a.originalPrice) - (b.salePrice || b.originalPrice))
+    }else if(value == 'high-to-low'){
+      products.sort((a , b) => (b.salePrice || b.originalPrice) - (a.salePrice || a.originalPrice))
+    }
+    setRender(!render)
+  }
+
+  function filterProducts(value){
+    let filtered
+    if(value == 'Indicators'){
+      filtered = products.filter((product) => product.type == 'indicator')
+    }else if(value == 'Courses'){
+      filtered = products.filter((product) => product.type == 'course')
+    }else if(value == 'Signals'){
+      filtered = products.filter((product) => product.type == 'signals')
+    }else {
+      filtered = products.filter((product) => product.type)
+    }
+    setItems(filtered)
+  }
+  
   return (
     <>
       <main>
@@ -10,15 +41,16 @@ function Prodcuts({ products }) {
             <h2 className="products-title">Products</h2>
             <div className="products--func">
               <div className="products__filter">
-                <select className="products__filter-sort" name="filter">
+                <select className="products__filter-sort" name="filter" onChange={(event) => filterProducts(event.target.value)}>
                   <option value="All">type ,All</option>
                   <option value="Courses">type ,Courses</option>
                   <option value="Indicators">type ,Indicators</option>
+                  <option value="Signals">type ,Signals</option>
                 </select>
               </div>
               <div className="products__sort">
-                <select className="products__filter-sort" name="sort">
-                  <option value="sort" disabled selected>
+                <select className="products__filter-sort" defaultValue={'sort'} name="sort" onChange={(event) => sortProducts(event.target.value)} >
+                  <option value="sort" disabled>
                     sort
                   </option>
                   <option value="low-to-high">Price ,Low To High</option>
@@ -28,8 +60,8 @@ function Prodcuts({ products }) {
             </div>
           </div>
           <div className="products">
-            {products != null &&
-              products.map((product) => <Product product={product} key={product.id} />)
+            {items != null &&
+              items.map((product) => <Product product={product} key={product.id} />)
             }
           </div>
         </div>
