@@ -15,7 +15,7 @@ function App() {
   const [testimonials , setTestimonials] = useState(null)
   const [faq , setFaq] = useState(null)
   const [products , setProducts] = useState(null)
-  const [cart , setCart] = useState(null)
+  const [cart , setCart] = useState([])
 
   useEffect(() => {
 
@@ -39,8 +39,8 @@ function App() {
     getProducts()
   },[])
 
-  function getProduct(product){
-    
+  function updateCart(value){
+    setCart(value)
   }
 
   return (
@@ -48,9 +48,9 @@ function App() {
       <Nav />
       <Routes>
         <Route exact path='/' element={<Home testimonials={testimonials} faqs={faq} />} />
-        <Route exact path='/products' element={<Products products={products} />} />
-        <Route exact path='products/:nameInUrl' element={<AboutProduct products={products} />}/>
-        <Route exact path='/cart' element={<Cart cart={cart} />} />
+        <Route exact path='/products' element={<Products products={products} cart={cart} />} />
+        <Route exact path='products/:nameInUrl' element={<AboutProduct products={products} cart={cart} />}/>
+        <Route exact path='/cart' element={<Cart  setCart={updateCart} cart={cart} />} />
         <Route exact path='/terms' element={<Terms />} />
       </Routes>
       <Footer />

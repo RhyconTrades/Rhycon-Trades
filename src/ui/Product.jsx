@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-function Product({ product }) {
+function Product({ product  , cart}) {
+
+  const [reload , setReload] = useState(false)
+
+  function getProduct(item) {
+    cart.push(item);
+    setReload(!reload)
+  }
   
   return (
     <div className="product">
@@ -23,7 +30,20 @@ function Product({ product }) {
       </div>
 
       <div className="product--btns">
-        <button className="product__btn">add to cart</button>
+                      {cart.find((item) => item.id == product.id) ? (
+                <Link to='/cart' className="product__btn">
+                  <button className="product__btn">
+                    Check Cart
+                  </button>{" "}
+                </Link>
+              ) : (
+                <button
+                  onClick={() => getProduct(product)}
+                  className="product__btn"
+                >
+                  add to cart
+                </button>
+              )}
           <Link className="product__btn" to={`/products/${product.nameInUrl}`}>
             <button className="lowlighted-btn product__btn">
               read more
