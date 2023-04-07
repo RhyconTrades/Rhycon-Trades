@@ -9,6 +9,7 @@ import { useState , useEffect } from 'react';
 import AboutProduct from './pages/AboutProduct';
 import Cart from './pages/Cart';
 import Terms from './pages/Terms';
+import PopUp from './ui/PopUp';
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
   const [faq , setFaq] = useState(null)
   const [products , setProducts] = useState(null)
   const [cart , setCart] = useState([])
+  const [popup , setPopup] = useState(false)
 
   useEffect(() => {
 
@@ -43,6 +45,15 @@ function App() {
     setCart(value)
   }
 
+  if(! localStorage.noFirstVisit){
+    localStorage.noFirstVisit = '1'
+    setPopup(true)
+  }
+
+  function closePopup(){
+    setPopup(false)
+  }
+
   return (
     <Router>
       <Nav />
@@ -53,6 +64,10 @@ function App() {
         <Route exact path='/cart' element={<Cart  setCart={updateCart} cart={cart} />} />
         <Route exact path='/terms' element={<Terms />} />
       </Routes>
+      {
+        popup &&
+        <PopUp closePopup={closePopup} />
+      }
       <Footer />
     </Router>
   );

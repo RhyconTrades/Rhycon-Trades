@@ -5,6 +5,7 @@ import Features from '../compnents/Features'
 import Header from '../compnents/Header'
 import Testimonials from '../compnents/Testimonials'
 import Trusted from '../compnents/Trusted'
+import Unlock from '../compnents/Unlock'
 
 
 function Home({testimonials , faqs}) {
@@ -15,6 +16,7 @@ function Home({testimonials , faqs}) {
             <Trusted />
             <Testimonials testimonials={testimonials} />
             <Features />
+            <Unlock />
             <Buy />
             <Faq faqs={faqs} />
         </main>
