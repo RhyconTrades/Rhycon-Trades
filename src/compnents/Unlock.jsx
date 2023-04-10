@@ -8,6 +8,7 @@ function Unlock() {
     setChecked(value)
   }
   return (
+    <section id="unlock">
     <div className="unlock-container">
       <h1 className="section-title">
         Unlock&nbsp;<span className="purple"> Advanced </span>&nbsp;Trading
@@ -33,6 +34,7 @@ function Unlock() {
         </ul>
       </div>
     </div>
+    </section>
   );
 }
 

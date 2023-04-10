@@ -193,6 +193,7 @@ nav {
   bottom: 0;
   width: 100%;
   max-height: calc(100vh - 69px);
+  max-height: calc(100dvh - 69px);
   height: 100%;
   background-color: #242424;
 }
@@ -390,6 +391,10 @@ header {
 /*
   Unlock
 */
+
+#unlock{
+  margin: 100px 0;
+}
 
 .unlock-container {
   padding: 40px;
