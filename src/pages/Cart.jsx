@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import CartProduct from "../ui/CartProduct";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
+import CheckOut from "../ui/CheckOut";
 
 function Cart({cart , setCart}) {
   const [totalPrice , setTotalPrice] = useState(0)
@@ -32,6 +33,7 @@ function Cart({cart , setCart}) {
           <p className="cart--price__sub">Subtotal <span>${(totalPrice * 0.9).toFixed(2)}</span></p>
           <p className="cart--price__sub">Tax <span>${(totalPrice * 0.1).toFixed(2)}</span></p>
           <h4 className="cart--price__sub cart--price__total">Total <span>${totalPrice.toFixed(2)}</span></h4>
+          <CheckOut cart={cart} totalPrice={totalPrice} />
         </div> : 
           <div className="cart--empty">
             <h2 className="cart--empty__header">cart is empty</h2>

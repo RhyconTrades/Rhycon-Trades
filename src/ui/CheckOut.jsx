@@ -1,27 +1,37 @@
-import React, { useEffect } from "react";
+import React from "react";
+import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 
-function CheckOut() {
-  const [paidFor, setPaidFor] = useState(false);
-  const [loaded, setLoaded] = useState(false);
-
-  let paypalRef = useRef();
-
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://www.paypal.com/sdk/js?client-id=AYS0zpfAKnRhBCVUgV-wj2h6jFcUGhjSUwIajG7QYkpKpaKCUNzISs0vanLuslgJF26YC0T7_xV0msVD"
-    script.addEventListener("load" , () => setLoaded(true))
-    document.body.appendChild(script)
-
-    if(loaded){
-        // setTimeout(() => {
-        //     window.paypal.Buttons({
-        //         createOrder:
-        //     }).render(paypalRef)
-        // })
-    }
-  });
-
-  return <div ref={(v) => (paypalRef = v)} />;
+function CheckOut({ cart , totalPrice }) {
+  const products = []
+  cart.map((item) => products.push(item.nameInUrl))
+  return (
+    <PayPalScriptProvider
+      options={{
+        "client-id":
+          "Afrn2OcrmKWA41_LP02iN1Nds2y7wKdgYKfUtjICe3wpnmERwn1gSam6MdfK-RlN9LSUFbW63JUios8G",
+      }}
+    >
+      <PayPalButtons
+        createOrder={(data, actions) => {
+          return actions.order.create({
+            purchase_units: [
+              {
+                amount: {
+                  value: totalPrice.toFixed(2).toString() ,
+                },
+              },
+            ],
+          });
+        }}
+        onApprove={(data, actions) => {
+          return actions.order.capture().then((details) => {
+              const name = details.payer.name.given_name;
+              alert(`Transaction completed by ${name} and he baught ${products.map((item) => item)}`);
+          });
+        }}
+        />
+    </PayPalScriptProvider>
+  );
 }
 
 export default CheckOut;
