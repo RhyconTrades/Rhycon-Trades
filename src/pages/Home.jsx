@@ -8,7 +8,7 @@ import Trusted from '../compnents/Trusted'
 import Unlock from '../compnents/Unlock'
 
 
-function Home({testimonials , faqs}) {
+function Home({testimonials , faqs , products}) {
   return (
     <>
         <Header />
@@ -17,7 +17,7 @@ function Home({testimonials , faqs}) {
             <Testimonials testimonials={testimonials} />
             <Features />
             <Unlock />
-            <Buy />
+            <Buy products={products} />
             <Faq faqs={faqs} />
         </main>
     </>

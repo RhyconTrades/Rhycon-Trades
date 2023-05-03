@@ -4,9 +4,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faShoppingCart , faDollarSign , faMagnifyingGlass , faWallet , faPlus , faMinus , faBars , faXmark , faCheck , faArrowRight , faGift } from '@fortawesome/free-solid-svg-icons';
+import { faShoppingCart , faDollarSign , faMagnifyingGlass , faWallet , faPlus , faMinus , faBars , faXmark , faCheck , faArrowRight , faGift , faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { faDiscord , faInstagram , faYoutube } from '@fortawesome/free-brands-svg-icons'
-library.add( faShoppingCart , faDollarSign , faMagnifyingGlass , faWallet , faPlus , faMinus , faDiscord , faInstagram , faYoutube , faBars , faXmark , faCheck , faArrowRight , faGift )
+library.add( faShoppingCart , faDollarSign , faMagnifyingGlass , faWallet , faPlus , faMinus , faDiscord , faInstagram , faYoutube , faBars , faXmark , faCheck , faArrowRight , faGift , faCartShopping )
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

@@ -1,8 +1,19 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-function Buy() {
+function Buy({ products }) {
   const [checked , setChecked] = useState(1)
+  let product = null
+
+  if(products !== null){
+    if(checked === 1){
+      product = products.find((item) => item.nameInUrl === 'RhyconCyclone')
+    }else if(checked === 2){
+      product = products.find((item) => item.nameInUrl === 'badge')
+    }else if(checked === 3){
+      product = products.find((item) => item.nameInUrl === 'signals')
+    }
+  }
 
   return (
     <section id="buy">
@@ -13,10 +24,14 @@ function Buy() {
           <div className="buy__table">
             <div className="buy__table--bar">
               <button onClick={() => setChecked(1)} className={`table--bar__btn ${checked != 1 && "low-lighted"}`}>Indicator</button>
-              <button onClick={() => setChecked(2)} className={`table--bar__btn ${checked != 2 && "low-lighted"}`}>Indicator</button>
-              <button onClick={() => setChecked(3)} className={`table--bar__btn ${checked != 3 && "low-lighted"}`}>Indicator</button>
+              <button onClick={() => setChecked(2)} className={`table--bar__btn ${checked != 2 && "low-lighted"}`}>Blue badge</button>
+              <button onClick={() => setChecked(3)} className={`table--bar__btn ${checked != 3 && "low-lighted"}`}>Signals</button>
             </div>
-            <div className="buy__table--content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, accusantium. Ea fugit reiciendis magni laboriosam beatae vero. Numquam blanditiis delectus expedita architecto. Magnam facere dolor quas optio dolores obcaecati numquam?</div>
+            <div className="buy__table--content">
+            {
+              product !== null && product.description
+            }
+            </div>
           </div>
           <Link className="buy__link" to="/products">
             <button className="buy__btn">buy now</button>

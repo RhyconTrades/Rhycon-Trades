@@ -5,7 +5,7 @@ function Testimonial({ testimonial }) {
   return (
     <div className="testimonial">
       <figure>
-        <img src={testimonial.imgUrl} />
+        <img className="skeleton-img" src={testimonial.imgUrl} />
       </figure>
       <div className="testimonial--content">
         <h3 className="testimonial__name">{testimonial.name}</h3>

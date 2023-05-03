@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import CartProduct from "../ui/CartProduct";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 
 function Cart({cart , setCart}) {
-  let totalPrice = 0
-  cart.map((item) => totalPrice += (item.salePrice || item.totalPrice))
+  const [totalPrice , setTotalPrice] = useState(0)
+
+  useEffect(() => {
+    let tempPrice = 0
+    cart.map((item) => tempPrice += (item.salePrice !== null ? item.salePrice : item.originalPrice))
+    setTotalPrice(tempPrice)
+  }, [] [cart])
+  
+
   return (
     <main>
       <div className="cart-container">
@@ -17,11 +26,21 @@ function Cart({cart , setCart}) {
                 {cart.map((item) => <CartProduct cart={cart} setCart={setCart} product={item} key={item.id}/>)}
           </div>
         </div>
+        {
+          totalPrice > 0 ?
         <div className="cart--price">
           <p className="cart--price__sub">Subtotal <span>${(totalPrice * 0.9).toFixed(2)}</span></p>
           <p className="cart--price__sub">Tax <span>${(totalPrice * 0.1).toFixed(2)}</span></p>
           <h4 className="cart--price__sub cart--price__total">Total <span>${totalPrice.toFixed(2)}</span></h4>
-        </div>
+        </div> : 
+          <div className="cart--empty">
+            <h2 className="cart--empty__header">cart is empty</h2>
+            <FontAwesomeIcon className="cart--empty__logo" icon='fa fa-cart-shopping' />
+            <Link to='/products'>
+              <button>browse products</button>
+            </Link>
+          </div>
+        }
       </div>
     </main>
   );

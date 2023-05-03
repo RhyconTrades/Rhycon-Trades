@@ -10,7 +10,7 @@ function AboutProduct({ products, cart }) {
   const url = useParams().nameInUrl;
   useEffect(() => {
     if (products != null) {
-      const item = products.find((item) => (item.nameInUrl = url));
+      const item = products.find((item) => (item.nameInUrl === url));
       setProduct(item);
     }
   }, [products]);

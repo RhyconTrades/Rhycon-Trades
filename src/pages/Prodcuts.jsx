@@ -28,7 +28,7 @@ function Prodcuts({ products , cart  ,setCart}) {
     }else if(value == 'Signals'){
       filtered = products.filter((product) => product.type == 'signals')
     }else {
-      filtered = products.filter((product) => product.type)
+      filtered = products.filter((product) => product)
     }
     setItems(filtered)
   }

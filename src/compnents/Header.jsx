@@ -1,11 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useInView } from "react-intersection-observer";
 
 function Header() {
+  const {inView , ref , entery} = useInView()
+
   return (
     <header>
       <div className="container">
-        <div className="header--content">
+        <div ref={ref} className="header--content">
             <h1 className="header--content__title">
               Master the Art of <span className="purple">Investing:</span>
               <br /> <span className="purple">Professional</span> Tools for{" "}
@@ -21,7 +24,7 @@ function Header() {
               </Link>
             </div>
             <figure className="header--img">
-                <img src="https://cdn.discordapp.com/attachments/1088531111942037534/1090683077010919494/image.png"/>
+                <img className="skeleton-img" src="https://cdn.discordapp.com/attachments/1088531111942037534/1090683077010919494/image.png"/>
               </figure>
           </div>
         </div>

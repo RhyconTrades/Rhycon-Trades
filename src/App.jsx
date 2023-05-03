@@ -58,7 +58,7 @@ function App() {
     <Router>
       <Nav />
       <Routes>
-        <Route exact path='/' element={<Home testimonials={testimonials} faqs={faq} />} />
+        <Route exact path='/' element={<Home testimonials={testimonials} products={products} faqs={faq} />} />
         <Route exact path='/products' element={<Products products={products} cart={cart} />} />
         <Route exact path='products/:nameInUrl' element={<AboutProduct products={products} cart={cart} />}/>
         <Route exact path='/cart' element={<Cart  setCart={updateCart} cart={cart} />} />
