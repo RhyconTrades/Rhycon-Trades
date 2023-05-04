@@ -23,7 +23,7 @@ function CheckOut({ cart , totalPrice }) {
             ],
           });
         }}
-        onApprove={(data, actions) => {
+        onApprove={async (data, actions) => {
           return actions.order.capture().then((details) => {
               const name = details.payer.name.given_name;
               alert(`Transaction completed by ${name} and he baught ${products.map((item) => item)}`);

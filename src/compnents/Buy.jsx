@@ -1,45 +1,18 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-function Buy({ products }) {
-  const [checked , setChecked] = useState(1)
-  let product = null
-
-  if(products !== null){
-    if(checked === 1){
-      product = products.find((item) => item.nameInUrl === 'RhyconCyclone')
-    }else if(checked === 2){
-      product = products.find((item) => item.nameInUrl === 'badge')
-    }else if(checked === 3){
-      product = products.find((item) => item.nameInUrl === 'signals')
-    }
-  }
+function Buy() {
 
   return (
     <section id="buy">
+      <div className="buy--call">
       <h1 className="buy-title">What are you waiting for ?</h1>
       <p className="buy__para">Don't let valuable opportunities slip away.</p>
-      <div className="buy-container">
-        <div className="buy--content">
-          <div className="buy__table">
-            <div className="buy__table--bar">
-              <button onClick={() => setChecked(1)} className={`table--bar__btn ${checked != 1 && "low-lighted"}`}>Indicator</button>
-              <button onClick={() => setChecked(2)} className={`table--bar__btn ${checked != 2 && "low-lighted"}`}>Blue badge</button>
-              <button onClick={() => setChecked(3)} className={`table--bar__btn ${checked != 3 && "low-lighted"}`}>Signals</button>
-            </div>
-            <div className="buy__table--content">
-            {
-              product !== null && product.description
-            }
-            </div>
-          </div>
-          <Link className="buy__link" to="/products">
-            <button className="buy__btn">buy now</button>
-          </Link>
-        </div>
-        <div className="buy--img">
-          <img src="https://cdn.discordapp.com/attachments/1088531111942037534/1093574216592408676/IMG_1457_1.png" />
-        </div>
+      <Link to='/products'>
+        <button>
+          Buy Now
+        </button>
+      </Link>
       </div>
     </section>
   );

@@ -11,13 +11,13 @@ import Unlock from '../compnents/Unlock'
 function Home({testimonials , faqs , products}) {
   return (
     <>
-        <Header />
+        <Header products={products} />
         <main>
             <Trusted />
             <Testimonials testimonials={testimonials} />
             <Features />
             <Unlock />
-            <Buy products={products} />
+            <Buy/>
             <Faq faqs={faqs} />
         </main>
     </>
