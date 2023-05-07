@@ -22,11 +22,11 @@ img {
 
 a,
 .purple {
-  color: #6e44ff;
+  color: #0000fe;
 }
 
 button {
-  background-color: #6e44ff;
+  background-color: #0000fe;
   height: 46px;
   padding: 12px;
   letter-spacing: 1.6px;
@@ -38,7 +38,7 @@ button {
 }
 
 button:hover {
-  background-color: #9022fd;
+  background-color: #3b3bff;
   color: #fff;
   border: none;
 }
@@ -101,7 +101,7 @@ h3 {
 
 .more:hover {
   background-color: transparent;
-  color: #9022fd;
+  color: #3b3bff;
 }
 
 /*
@@ -160,7 +160,7 @@ nav {
 .nav--link::after {
   content: "";
   height: 2px;
-  background-color: #6e44ff;
+  background-color: #0000fe;
   position: absolute;
   left: 0;
   bottom: 0;
@@ -175,7 +175,7 @@ nav {
 .menu-btn {
   width: max-content;
   background-color: transparent;
-  color: #6e44ff;
+  color: #0000fe;
   margin: 0;
   font-size: 20px;
   display: none;
@@ -183,7 +183,7 @@ nav {
 
 .menu-btn:hover {
   background-color: transparent;
-  color: #6e44ff;
+  color: #0000fe;
 }
 
 .menu {
@@ -323,7 +323,7 @@ header {
 }
 
 .testimonial__name {
-  color: #6e44ff;
+  color: #0000fe;
   margin-bottom: 10px;
 }
 
@@ -412,7 +412,7 @@ header {
 }
 
 .feature__logo {
-  background-color: #9022fd;
+  background-color: #3b3bff;
   color: #fff;
   padding: 10px;
   font-size: 20px;
@@ -463,7 +463,7 @@ header {
 }
 
 .low-lighted-list .content--item__btn:hover{
-  background-color: #9022fd;
+  background-color: #3b3bff;
   padding: 10px;
   border: none;
 }
@@ -588,11 +588,11 @@ width: max-content;
 .question {
   padding: 30px;
   background-color: #ffffff;
-  border-top: 2px solid #6e44ff;
+  border-top: 2px solid #0000fe;
 }
 
 .question:last-child {
-  border-bottom: 2px solid #6e44ff;
+  border-bottom: 2px solid #0000fe;
 }
 
 .questions {
@@ -790,7 +790,7 @@ width: max-content;
 
 .product__feature--icon {
   margin-right: 6px;
-  color: #6e44ff;
+  color: #0000fe;
 }
 
 /*
@@ -809,7 +809,7 @@ width: max-content;
 }
 
 .cart--bar {
-  background-color: #6e44ff;
+  background-color: #0000fe;
   padding: 0 20px;
   width: 100%;
   height: 40px;
@@ -876,7 +876,7 @@ width: max-content;
 }
 
 .cart--price {
-  border-top: 2px solid #6e44ff;
+  border-top: 2px solid #0000fe;
   max-width: 300px;
   margin-top: 80px;
   align-self: flex-end;
@@ -915,11 +915,11 @@ width: max-content;
 }
 
 .terms__title {
-  color: #6e44ff;
+  color: #0000fe;
 }
 
 .terms__update {
-  color: #6e44ff;
+  color: #0000fe;
   margin-bottom: 30px;
 }
 
@@ -931,7 +931,7 @@ width: max-content;
 }
 
 .terms__out {
-  color: #6e44ff;
+  color: #0000fe;
 }
 
 /*
@@ -968,13 +968,13 @@ width: max-content;
   font-size: 18px;
   top: 8px ;
   left: 8px;
-  color: #6e44ff;
+  color: #0000fe;
   cursor: pointer;
 }
 
 .popup--icon{
   font-size: 80px;
-  color: #6e44ff;
+  color: #0000fe;
   margin-right: 40px;
 }
 
@@ -1056,7 +1056,7 @@ form {
 
 input[type="email"] {
   background-color: transparent;
-  border-bottom: #9022fd solid 1px;
+  border-bottom: #3b3bff solid 1px;
   height: 30px;
   color: #fff;
   margin-bottom: 20px;
@@ -1065,7 +1065,7 @@ input[type="email"] {
 }
 
 input[type="submit"] {
-  background-color: #6e44ff;
+  background-color: #0000fe;
   color: #fff;
   font-size: 18px;
   font-weight: 700;
@@ -1077,7 +1077,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  background-color: #9022fd;
+  background-color: #3b3bff;
 }
 
 .copyright {
@@ -1403,7 +1403,7 @@ input[type="submit"]:hover {
   }
 
   .nav--link:hover {
-    background-color: #6e44ff;
+    background-color: #0000fe;
   }
 
   button {
