@@ -8,7 +8,7 @@ import forbes from '../img/forbes.png'
 function Trusted() {
   return (
     <section id="trusted">
-        <div className="container trusted-container">
+        <div className="trusted-container">
             <h6>Trusted By Thousands Of Traders</h6>
             <ul className="trusted__logos">
                 <li className="trusted__logo">

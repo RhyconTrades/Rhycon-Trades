@@ -10,10 +10,10 @@ function Testimonial({ testimonial }) {
       <div className="testimonial--content">
         <h3 className="testimonial__name">{testimonial.name}</h3>
         <p className="testimonial__income">
-          <span className="dollar">
-            <FontAwesomeIcon icon="fa fa-dollar-sign" />
-          </span>{" "}
-          ${testimonial.ammountMade}
+          <span className="star">
+            <FontAwesomeIcon icon="fa fa-star" />
+          </span>
+          {testimonial.ammountMade}
         </p>
         <p className="testimonial__description">{testimonial.description}</p>
       </div>

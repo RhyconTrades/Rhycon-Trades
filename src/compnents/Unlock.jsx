@@ -11,7 +11,7 @@ function Unlock() {
     <section id="unlock">
     <div className="unlock-container">
       <h1 className="section-title">
-        Unlock&nbsp;<span className="purple"> Advanced </span>&nbsp;Trading
+        Unlock&nbsp;<span className="purple">Advanced</span>&nbsp;Trading
         Tools
       </h1>
       <div className="unlock">
