@@ -8,7 +8,7 @@ function CheckOut({ cart , totalPrice }) {
     <PayPalScriptProvider
       options={{
         "client-id":
-          "Afrn2OcrmKWA41_LP02iN1Nds2y7wKdgYKfUtjICe3wpnmERwn1gSam6MdfK-RlN9LSUFbW63JUios8G",
+          "AXA0RnGh9y8cjy8a5daWd96J2DVHFo4b6GcGaxAK2kWt2hfZPmQV31djVjDzSB1iC7Il756w2OONEqdk",
       }}
     >
       <PayPalButtons
@@ -21,13 +21,14 @@ function CheckOut({ cart , totalPrice }) {
                 },
               },
             ],
+            // application_context: {
+            //   shipping_preference: 'NO_SHIPPING',
+            // },
           });
         }}
         onApprove={async (data, actions) => {
-          return actions.order.capture().then((details) => {
-              const name = details.payer.name.given_name;
-              alert(`Transaction completed by ${name} and he baught ${products.map((item) => item)}`);
-          });
+          const order = await actions.order.capture()
+          console.log("success")
         }}
         />
     </PayPalScriptProvider>
