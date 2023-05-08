@@ -21,15 +21,15 @@ function Unlock() {
         <ul className="unlock--content">
             <li onClick={() => checkButton(1)} className={`unlock--content__item ${checked != 1 && "low-lighted-list"}`}>
                 <button className="content--item__btn" />
-                <p className="content--item__para">gain execlusive access to live calls with expert mentors who specilize in helping you start trading in just few days</p>
+                <p className="content--item__para">Gain access to knowledge from our expert analysts who will help you go from day one to being a master at trading</p>
             </li>
             <li onClick={() => checkButton(2)} className={`unlock--content__item ${checked != 2 && "low-lighted-list"}`}>
                 <button className="content--item__btn" />
-                <p className="content--item__para">giving you knowledge and crucial tools so you can start making money ASAP</p>
+                <p className="content--item__para">Access the tools tools used by some of the best traders out there</p>
             </li>
             <li onClick={() => checkButton(3)}className={`unlock--content__item ${checked != 3 && "low-lighted-list"}`}>
                 <button className="content--item__btn" />
-                <p className="content--item__para">rhycon trades students have taken the risk and are now enjoying the reward. you have so much to gain by joining and practicly nothing to lose</p>
+                <p className="content--item__para">Join a growing comunity of traders, who are taking their future into their own hands</p>
             </li>
         </ul>
       </div>
